@@ -1,0 +1,3 @@
+git command script for up dating files to get from local computer 
+
+cd "$env:USERPROFILE\Desktop\MCNANIRFOTO-Netlify-Auto"; git add .; git commit -m "whatever you did"; git push

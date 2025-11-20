@@ -34,4 +34,13 @@ document.getElementById('mobile-menu').addEventListener('click', () => {
 <!-- your hero fade script + showroom + lightbox + footer stay exactly the same -->
 <!-- (they’re already in your folder and perfect) -->
 
+<script>
+document.getElementById('mobile-menu')?.addEventListener('click', () => {
+    document.getElementById('nav-links').classList.toggle('active');
+});
+document.querySelectorAll('.nav-links a').forEach(link => {
+    if (link.href === location.href) link.classList.add('active');
+});
+</script>
 </body></html>
+

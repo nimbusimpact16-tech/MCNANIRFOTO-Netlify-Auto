@@ -64,7 +64,7 @@
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">MCNANIRFOTO</div>
+        <div class="logo">MCNAIRFOTO</div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -174,7 +174,16 @@
         <p>© 2025 MCNANIRFOTO • All rights reserved</p>
     </div>
 </footer>
+<script>
+document.getElementById('mobile-menu')?.addEventListener('click', () => {
+    document.getElementById('nav-links').classList.toggle('active');
+});
+document.querySelectorAll('.nav-links a').forEach(link => {
+    if (link.href === location.href) link.classList.add('active');
+});
+</script>
 </body>
 </html>
+
 
 

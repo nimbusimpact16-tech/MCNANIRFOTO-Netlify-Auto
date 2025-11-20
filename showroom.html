@@ -16,15 +16,7 @@
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">MCNAIRFOTO</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="showroom.html" class="active">Showroom</a></li>
-            <li><a href="booking.html">Book Now</a></li>
-        </ul>
+    <nav class="navbar"><div class="logo">MCNAIRFOTO</div><div class="menu-toggle" id="mobile-menu">☰</div><ul class="nav-links" id="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="showroom.html">Showroom</a></li><li><a href="booking.html">Book Now</a></li></ul>
     </nav>
 
     <section class="showroom-section">
@@ -44,18 +36,18 @@
     </div>
 
     <footer class="footer">
-        <div class="container">
-            <h3>Get in Touch</h3>
-            <form action="https://formspree.io/f/xnnwjojg" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="_replyto" placeholder="Your Email" required>
-                <input type="text" name="phone" placeholder="Phone (optional)">
-                <textarea name="message" placeholder="Tell me about your big day…" rows="5" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-            <p>© 2025 MCNANIRFOTO • All rights reserved</p>
-        </div>
-    </footer>
+    <div class="container">
+        <h3>Get in Touch</h3>
+        <form action="https://formspree.io/f/xnnwjojg" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="_replyto" placeholder="Your Email" required>
+            <input type="text" name="phone" placeholder="Phone (optional)">
+            <textarea name="message" placeholder="Tell me about your big day…" rows="5" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+        <p>© 2025 MCNAIRFOTO • All rights reserved</p>
+    </div>
+</footer>
 
     <script src="script.js"></script>
 
@@ -84,4 +76,5 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 </script>
 </body>
 </html>
+
 

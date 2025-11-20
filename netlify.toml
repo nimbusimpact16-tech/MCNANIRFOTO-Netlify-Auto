@@ -4,5 +4,5 @@
 
 [[headers]]
   for = "/photos/list.json"
-    [headers.values]
+  [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"

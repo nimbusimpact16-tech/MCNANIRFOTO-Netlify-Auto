@@ -2,54 +2,40 @@
 body { font-family:'Roboto',sans-serif; background:#000; color:white; overflow-x:hidden; }
 
 .navbar {
-    position:fixed; top:0; left:0; right:0; background:rgba(0,0,0,0.95);
-    padding:20px 40px; display:flex; justify-content:space-between; align-items:center;
-    z-index:1000; backdrop-filter:blur(12px); border-bottom:1px solid rgba(201,169,110,0.2);
+    position:fixed; top:0; left:0; right:0; height:90px;
+    background:rgba(0,0,0,0.95); padding:0 50px;
+    display:flex; justify-content:space-between; align-items:center;
+    z-index:1000; backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(201,169,110,0.2);
 }
-.logo { font-size:2.4rem; font-weight:900; color:#c9a96e; letter-spacing:2px; }
-.nav-links { display:flex; gap:35px; }
-.nav-links a { color:white; text-decoration:none; font-size:1.15rem; font-weight:500; transition:0.3s; }
+.logo { font-size:2.6rem; font-weight:900; color:#c9a96e; letter-spacing:2px; }
+.nav-links { display:flex; gap:45px; }
+.nav-links a { color:white; text-decoration:none; font-size:1.2rem; font-weight:500; transition:0.3s; }
 .nav-links a:hover, .nav-links a.active { color:#c9a96e; }
-.menu-toggle { display:none; cursor:pointer; font-size:2.4rem; color:white; }
 
-@media (max-width:860px) {
-    .menu-toggle { display:block; }
-    .nav-links { position:fixed; top:0; right:-100%; width:100%; height:100vh; background:#000;
-        flex-direction:column; justify-content:center; align-items:center; transition:0.4s; gap:50px; font-size:1.8rem; }
-    .nav-links.active { right:0; }
+/* Mobile menu button – HIDDEN on desktop */
+.menu-toggle { display:none; cursor:pointer; font-size:2.5rem; color:white; }
+
+/* Hero – your original stunning full-screen hero */
+.hero {
+    position:relative; height:100vh; min-height:700px;
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)), url('photos/hero1.jpg') center/cover no-repeat;
 }
+.hero-content h1 { font-family:'Playfair Display',serif; font-size:7rem; margin-bottom:20px; }
+.hero-content p { font-size:1.7rem; margin-bottom:40px; }
+.btn { padding:20px 60px; background:#c9a96e; color:black; border-radius:70px; font-weight:bold; font-size:1.3rem; text-decoration:none; }
 
-/* HERO – your original beautiful look */
-.hero { position:relative; height:100vh; min-height:700px; display:flex; align-items:center; justify-content:center; text-align:center; }
-.hero-content h1 { font-family:'Playfair Display',serif; font-size:6.5rem; margin-bottom:20px; }
-.hero-content p { font-size:1.6rem; max-width:800px; margin:0 auto 40px; }
-.btn { padding:18px 50px; background:#c9a96e; color:black; border-radius:60px; font-weight:bold; font-size:1.2rem; text-decoration:none; }
-
-/* PRICING – prices now clearly visible */
-.price-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; margin-top:60px; }
-.card { background:#1a1a1a; padding:40px 30px; border-radius:15px; text-align:center; border:2px solid transparent; min-height:480px; display:flex; flex-direction:column; justify-content:space-between; }
-.card:hover { border-color:#c9a96e; }
-.card.featured { border-color:#c9a96e; background:#222; }
-.price { font-size:3.5rem; font-weight:bold; color:#c9a96e; margin:20px 0; }
-.tagline { font-size:1.2rem; margin:15px 0; color:#ddd; }
-.card ul { text-align:left; margin:20px 0; flex-grow:1; }
-.card .btn.small { margin-top:auto; padding:12px 30px; }
-
-/* Showroom & other pages – keep your original look */
-.showroom-section { padding:140px 40px 100px; text-align:center; }
-.showroom-section h1 { font-size:5rem; color:#c9a96e; margin-bottom:80px; }
-.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(380px,1fr)); grid-auto-rows:420px; gap:0; }
-.grid img { width:100%; height:100%; object-fit:cover; transition:all .6s; }
-.grid img:hover { transform:scale(1.08); box-shadow:0 30px 80px rgba(0,0,0,0.9); }
-
-.footer { padding:100px 40px; background:#111; text-align:center; }
-.footer h3 { color:#c9a96e; margin-bottom:40px; }
-.footer form { max-width:700px; margin:0 auto; display:grid; gap:18px; }
-.footer input, .footer textarea { padding:16px; background:#222; border:none; border-radius:12px; color:white; }
-.footer button { background:#c9a96e; color:black; padding:18px; border:none; border-radius:60px; cursor:pointer; font-weight:bold; }
-
-@media (max-width:768px) {
-    .hero h1 { font-size:3.5rem; }
-    .hero p { font-size:1.2rem; padding:0 20px; }
-    .price { font-size:2.8rem; }
+/* ONLY ON MOBILE – this fixes everything */
+@media (max-width: 860px) {
+    .menu-toggle { display:block !important; }
+    .nav-links {
+        position:fixed; top:0; left:-100%; width:100%; height:100vh; background:#000;
+        flex-direction:column; justify-content:center; align-items:center;
+        transition:left 0.4s ease; gap:50px; font-size:2.2rem; z-index:999;
+    }
+    .nav-links.active { left:0; }
+    .hero h1 { font-size:3.8rem; }
+    .hero p { font-size:1.3rem; padding:0 20px; }
+    .navbar { padding:0 20px; }
 }

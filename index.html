@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCNANIRFOTO | Photography</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">MCNANIRFOTO</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="showroom.html">Showroom</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>MCNANIRFOTO</h1>
+            <p>Capturing your story with passion and precision</p>
+            <br><br><br>
+            <a href="showroom.html" class="btn">View Gallery</a>
+        </div>
+    </header>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close">×</span>
+        <img id="lightbox-img" src="" alt="" />
+        <div class="nav">
+            <button onclick="prevImage(event)">‹</button>
+            <button onclick="nextImage(event)">›</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <h3>Get in Touch</h3>
+            <form action="https://formspree.io/f/xnnwjojg" method="POST">
+                <input type="text" name="nameof" placeholder="Your Name" required>
+                <input type="email" name="_replyto" placeholder="Your Email" required>
+                <input type="text" name="phone" placeholder="Phone (optional)">
+                <textarea name="message" placeholder="Tell me about your big day…" rows="5" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <p>© 2025 MCNANIRFOTO • All rights reserved</p>
+        </div>
+    </footer>
+
+    <!-- HERO RANDOM PHOTO WITH SMOOTH FADE -->
+    <script>
+        const photos = [
+            'photos/3 (1).jpeg',
+            'photos/3 (1).JPG',
+            'photos/3 (10).jpg',
+            'photos/3 (11).jpg',
+            'photos/3 (12).jpg',
+            'photos/3 (13).jpg',
+            'photos/3 (14).jpg',
+            'photos/3 (15).jpg',
+            'photos/3 (16).jpg',
+            'photos/3 (17).jpg',
+            'photos/3 (18).jpg',
+            'photos/3 (19).jpg',
+            'photos/3 (2).JPG',
+            'photos/3 (20).jpg',
+            'photos/3 (21).jpg',
+            'photos/3 (22).jpg',
+            'photos/3 (23).jpg',
+            'photos/3 (24).jpg',
+            'photos/3 (25).jpg',
+            'photos/3 (26).jpg',
+            'photos/3 (27).jpg',
+            'photos/3 (28).jpg',
+            'photos/3 (29).jpg',
+            'photos/3 (3).jpg',
+            'photos/3 (30).jpg',
+            'photos/3 (4).jpg',
+            'photos/3 (5).JPG',
+            'photos/3 (6).JPG',
+            'photos/3 (7).JPG',
+            'photos/3 (8).jpg',
+            'photos/3 (9).jpg',
+            'photos/RGT_1844.jpg',
+            'photos/RGT_1871.jpg',
+            'photos/RGT_5021.jpg',
+            'photos/RGT_5367.jpg',
+            'photos/RGT_8033.jpg'
+        ];
+
+        let currentImg = null;
+
+        function changeHeroPhoto() {
+            const randomPhoto = photos[Math.floor(Math.random() * photos.length)] + '?t=' + Date.now();
+
+            const img = document.createElement('img');
+            img.src = randomPhoto;
+            img.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-2;opacity:0;transition:opacity 1.5s ease-in-out;';
+
+            img.onload = () => {
+                img.style.opacity = '1';
+                if (currentImg && currentImg !== img) {
+                    currentImg.style.opacity = '0';
+                    setTimeout(() => currentImg.remove(), 1500);
+                }
+                currentImg = img;
+            };
+
+            const hero = document.querySelector('.hero');
+            hero.style.position = 'relative';
+            hero.insertBefore(img, hero.firstChild);
+        }
+
+        document.addEventListener('DOMContentLoaded', changeHeroPhoto);
+        setInterval(changeHeroPhoto, 10000); // changes every 10 seconds
+    </script>
+</body>
+</html>

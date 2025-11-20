@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showroom | MCNANIRFOTO</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        .showroom-section{padding:120px 0 80px;background:#000}
+        .showroom-section h1{font-family:'Playfair Display',serif;font-size:4.5rem;color:#c9a96e;text-align:center;margin-bottom:60px}
+        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));grid-auto-rows:420px;gap:0}
+        .grid img{width:100%;height:100%;object-fit:cover;transition:all .5s;cursor:pointer}
+        .grid img:hover{transform:scale(1.08);box-shadow:0 30px 60px rgba(0,0,0,0.9);z-index:10}
+        .loading{grid-column:1/-1;text-align:center;color:#c9a96e;font-size:2rem;padding:100px}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">MCNANIRFOTO</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="showroom.html" class="active">Showroom</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+        </ul>
+    </nav>
+
+    <section class="showroom-section">
+        <h1>Showroom</h1>
+        <div class="grid" id="gallery-grid">
+            <div class="loading">Loading your latest work...</div>
+        </div>
+    </section>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close">×</span>
+        <img id="lightbox-img" src="" alt="" />
+        <div class="nav">
+            <button onclick="prevImage(event)">Previous</button>
+            <button onclick="nextImage(event)">Next</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <h3>Get in Touch</h3>
+            <form action="https://formspree.io/f/xnnwjojg" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="_replyto" placeholder="Your Email" required>
+                <input type="text" name="phone" placeholder="Phone (optional)">
+                <textarea name="message" placeholder="Tell me about your big day…" rows="5" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <p>© 2025 MCNANIRFOTO • All rights reserved</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <script>
+    fetch('photos/list.json?t=' + Date.now())
+      .then(r => r.json())
+      .then(files => {
+        const grid = document.getElementById('gallery-grid');
+        grid.innerHTML = '';
+        files.forEach(f => {
+          const img = document.createElement('img');
+          img.src = 'photos/' + f;
+          img.alt = 'MCNANIRFOTO';
+          img.onclick = () => openLightbox(img);
+          grid.appendChild(img);
+        });
+      });
+    </script>
+</body>
+</html>

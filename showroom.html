@@ -111,6 +111,7 @@
 
     <div class="gallery-grid">
 
+      <!-- REAL EXACT FILENAMES -->
       <img src="/photos/2.jpg" onclick="openLightbox(this)">
       <img src="/photos/3.jpg" onclick="openLightbox(this)">
       <img src="/photos/4.jpg" onclick="openLightbox(this)">
@@ -147,6 +148,7 @@
       <img src="/photos/tydtrydt.jpg" onclick="openLightbox(this)">
       <img src="/photos/tydty.jpg" onclick="openLightbox(this)">
 
+      <!-- CONFIRMED FILENAME -->
       <img src="/photos/tydtyt555.jpg" onclick="openLightbox(this)">
 
       <img src="/photos/vbvcbfg.jpg" onclick="openLightbox(this)">
@@ -155,21 +157,20 @@
     </div>
   </section>
 
-  <!-- LIGHTBOX MODAL -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
     <span class="close" onclick="closeLightbox()">×</span>
-    <img src="" alt="Enlarged photo" id="lightbox-img">
+    <img src="" id="lightbox-img">
   </div>
 
   <footer class="footer">
     <div class="container">
       <h3>Get in Touch</h3>
       <form action="https://formspree.io/f/xnnwjojg" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="_replyto" placeholder="Your Email" required>
+        <input type="text" name="name" required placeholder="Your Name">
+        <input type="email" name="_replyto" required placeholder="Your Email">
         <input type="text" name="phone" placeholder="Phone (optional)">
-        <textarea name="message" placeholder="Tell me about your big day…" rows="5" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
+        <textarea name="message" rows="5" required placeholder="Tell me about your big day…"></textarea>
+        <button class="btn">Send Message</button>
       </form>
       <p>© 2025 MCNAIRFOTO • All rights reserved</p>
     </div>

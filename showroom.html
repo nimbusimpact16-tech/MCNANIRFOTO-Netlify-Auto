@@ -5,6 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Showroom | MCNAIRFOTO</title>
 <link rel="stylesheet" href="style.css">
+<style>
+.gallery-section{padding:140px 20px 100px;background:#000;text-align:center}
+.gallery-section h1{font-family:"Playfair Display",serif;font-size:4.5rem;color:#c9a96e;margin-bottom:60px}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+  gap:20px;
+  max-width:1600px;
+  margin:0 auto;
+}
+.gallery-grid img{
+  width:100%;
+  height:350px;
+  object-fit:cover;
+  border-radius:15px;
+  transition:.4s;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+.gallery-grid img:hover{
+  transform:scale(1.03);
+  box-shadow:0 20px 40px rgba(201,169,110,0.3);
+}
+@media(max-width:860px){
+  .gallery-section h1{font-size:3.5rem}
+  .gallery-grid{grid-template-columns:1fr;gap:25px}
+  .gallery-grid img{height:280px}
+}
+</style>
 </head>
 <body>
 
@@ -20,44 +48,48 @@
   </ul>
 </nav>
 
-<section class="showroom-section">
-  <h1>Showroom</h1>
-  <div class="grid" id="gallery">
-    <p style="grid-column:1/-1;color:#c9a96e;font-size:2rem;">Loading your gallery…</p>
+<section class="gallery-section">
+  <h1>Showroom Gallery</h1>
+  <div class="gallery-grid">
+
+    <!-- ADD YOUR PHOTOS HERE – just keep the same format -->
+    <img src="images/gallery1.jpg" alt="Wedding Photo 1">
+    <img src="images/gallery2.jpg" alt="Wedding Photo 2">
+    <img src="images/gallery3.jpg" alt="Wedding Photo 3">
+    <img src="images/gallery4.jpg" alt="Wedding Photo 4">
+    <img src="images/gallery5.jpg" alt="Wedding Photo 5">
+    <img src="images/gallery6.jpg" alt="Wedding Photo 6">
+    <img src="images/gallery7.jpg" alt="Wedding Photo 7">
+    <img src="images/gallery8.jpg" alt="Wedding Photo 8">
+    <img src="images/gallery9.jpg" alt="Wedding Photo 9">
+    <img src="images/gallery10.jpg" alt="Wedding Photo 10">
+    <img src="images/gallery11.jpg" alt="Wedding Photo 11">
+    <img src="images/gallery12.jpg" alt="Wedding Photo 12">
+
+    <!-- Add as many as you want – they will auto-grid perfectly -->
+    
   </div>
 </section>
 
-<div class="lightbox" id="lightbox">
-  <span class="close">×</span>
-  <img src="" alt="">
-</div>
+<footer class="footer">
+  <div class="container">
+    <h3>Get in Touch</
+
+h3>
+    <form action="https://formspree.io/f/xnnwjojg" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="_replyto" placeholder="Your Email" required>
+      <input type="text" name="phone" placeholder="Phone (optional)">
+      <textarea name="message" placeholder="Tell me about your big day…" rows="5" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+    <p>© 2025 MCNAIRFOTO • All rights reserved</p>
+  </div>
+</footer>
 
 <script>
-fetch('photos/list.json')
-  .then(r => r.json())
-  .then(files => {
-    const grid = document.getElementById('gallery');
-    grid.innerHTML = '';
-    files.forEach(f => {
-      const div = document.createElement('div');
-      div.className = 'img-wrapper';
-      const img = document.createElement('img');
-      img.src = 'photos/' + f;
-      img.loading = 'lazy';
-      img.onclick = () => {
-        document.querySelector('#lightbox img').src = img.src;
-        document.getElementById('lightbox').classList.add('active');
-      };
-      div.appendChild(img);
-      grid.appendChild(div);
-    });
-  });
-
-// Lightbox & menu
-document.querySelector('.close').onclick = () => document.getElementById('lightbox').classList.remove('active');
-document.getElementById('lightbox').onclick = e => e.target.id==='lightbox' && document.getElementById('lightbox').classList.remove('active');
-document.getElementById('mobile-menu').onclick = () => document.getElementById('nav-links').classList.toggle('active');
+document.getElementById('mobile-menu').onclick = () => 
+  document.getElementById('nav-links').classList.toggle('active');
 </script>
-
 </body>
 </html>

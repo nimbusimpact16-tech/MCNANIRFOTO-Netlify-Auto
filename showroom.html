@@ -1,58 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Showroom | MCNAIRFOTO</title>
-<link rel="stylesheet" href="style.css">
-<style>
-.gallery-section{padding:140px 20px 100px;background:#000;text-align:center}
-.gallery-section h1{font-family:"Playfair Display",serif;font-size:4.5rem;color:#c9a96e;margin-bottom:60px}
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
-  gap:25px;
-  max-width:1600px;
-  margin:0 auto;
-}
-.gallery-grid img{
-  width:100%;
-  border-radius:15px;
-  cursor:pointer;
-  transition:.4s;
-  box-shadow:0 10px 30px rgba(0,0,0,0.6);
-}
-.gallery-grid img:hover{
-  transform:scale(1.03);
-  box-shadow:0 20px 40px rgba(201,169,110,0.4);
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Showroom | MCNAIRFOTO</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .gallery-section {
+      padding: 140px 20px 100px;
+      background: #000;
+      text-align: center;
+    }
+    .gallery-section h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 4.5rem;
+      color: #c9a96e;
+      margin-bottom: 60px;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 25px;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+    .gallery-grid img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: 0.4s;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    }
+    .gallery-grid img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 20px 40px rgba(201,169,110,0.4);
+    }
 
-/* LIGHTBOX MODAL */
-.lightbox{
-  display:none;
-  position:fixed;
-  z-index:9999;
-  left:0;top:0;
-  width:100%;height:100%;
-  background:rgba(0,0,0,0.9);
-  align-items:center;
-  justify-content:center;
-}
-.lightbox.active{display:flex;}
-.lightbox img{
-  max-width:90%;
-  max-height:80%;
-  border-radius:10px;
-  box-shadow:0 20px 60px rgba(0,0,0,0.8);
-}
-.lightbox .close{
-  position:absolute;
-  top:20px;right:30px;
-  font-size:3rem;
-  color:#fff;
-  cursor:pointer;
-}
-</style>
+    /* LIGHTBOX MODAL */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .lightbox.active {
+      display: flex;
+    }
+    .lightbox img {
+      max-width: 95%;
+      max-height: 90vh;
+      border-radius: 15px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+    }
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 50px;
+      color: #c9a96e;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .close:hover {
+      color: white;
+    }
+    @media (max-width: 860px) {
+      .gallery-section h1 {
+        font-size: 3.5rem;
+      }
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      .gallery-grid img {
+        height: 280px;
+      }
+      .close {
+        top: 20px;
+        right: 20px;
+        font-size: 40px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -68,24 +107,25 @@
   </nav>
 
   <section class="gallery-section">
-  <h1>Showroom Gallery</h1>
-  <div class="gallery-grid">
+    <h1>Showroom Gallery</h1>
+    <div class="gallery-grid">
 
-    <img src="images/gallery1.jpg" alt="Wedding Photo 1" onclick="openLightbox(this)">
-    <img src="images/gallery2.jpg" alt="Wedding Photo 2" onclick="openLightbox(this)">
-    <img src="images/gallery3.jpg" alt="Wedding Photo 3" onclick="openLightbox(this)">
-    <img src="images/gallery4.jpg" alt="Wedding Photo 4" onclick="openLightbox(this)">
-    <img src="images/gallery5.jpg" alt="Wedding Photo 5" onclick="openLightbox(this)">
-    <img src="images/gallery6.jpg" alt="Wedding Photo 6" onclick="openLightbox(this)">
-    <img src="images/gallery7.jpg" alt="Wedding Photo 7" onclick="openLightbox(this)">
-    <img src="images/gallery8.jpg" alt="Wedding Photo 8" onclick="openLightbox(this)">
-    <img src="images/gallery9.jpg" alt="Wedding Photo 9" onclick="openLightbox(this)">
-    <img src="images/gallery10.jpg" alt="Wedding Photo 10" onclick="openLightbox(this)">
-    <img src="images/gallery11.jpg" alt="Wedding Photo 11" onclick="openLightbox(this)">
-    <img src="images/gallery12.jpg" alt="Wedding Photo 12" onclick="openLightbox(this)">
+      <!-- NOTE: now using 'photos/' instead of 'images/' -->
+      <img src="photos/gallery1.jpg"  alt="Photo 1"  onclick="openLightbox(this)">
+      <img src="photos/gallery2.jpg"  alt="Photo 2"  onclick="openLightbox(this)">
+      <img src="photos/gallery3.jpg"  alt="Photo 3"  onclick="openLightbox(this)">
+      <img src="photos/gallery4.jpg"  alt="Photo 4"  onclick="openLightbox(this)">
+      <img src="photos/gallery5.jpg"  alt="Photo 5"  onclick="openLightbox(this)">
+      <img src="photos/gallery6.jpg"  alt="Photo 6"  onclick="openLightbox(this)">
+      <img src="photos/gallery7.jpg"  alt="Photo 7"  onclick="openLightbox(this)">
+      <img src="photos/gallery8.jpg"  alt="Photo 8"  onclick="openLightbox(this)">
+      <img src="photos/gallery9.jpg"  alt="Photo 9"  onclick="openLightbox(this)">
+      <img src="photos/gallery10.jpg" alt="Photo 10" onclick="openLightbox(this)">
+      <img src="photos/gallery11.jpg" alt="Photo 11" onclick="openLightbox(this)">
+      <img src="photos/gallery12.jpg" alt="Photo 12" onclick="openLightbox(this)">
 
-  </div>
-</section>
+    </div>
+  </section>
 
   <!-- LIGHTBOX MODAL -->
   <div class="lightbox" id="lightbox" onclick="closeLightbox()">
@@ -107,22 +147,21 @@
     </div>
   </footer>
 
-<script>
-function openLightbox(img) {
-  document.getElementById('lightbox-img').src = img.src;
-  document.getElementById('lightbox').classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('active');
-  document.body.style.overflow = 'auto';
-}
-// Close on Escape key
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeLightbox();
-});
-</script>
+  <script>
+    function openLightbox(img) {
+      document.getElementById('lightbox-img').src = img.src;
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,5 +1,15 @@
 {
   "buildCommand": "node generate-gallery.js",
   "outputDirectory": ".",
-  "framework": "static"
+  "headers": [
+    {
+      "source": "/photos/list.json",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
+    }
+  ]
 }

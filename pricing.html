@@ -12,7 +12,6 @@
             gap: 30px;
             margin-top: 50px;
         }
-
         .card {
             background: #1a1a1a;
             padding: 30px;
@@ -23,164 +22,141 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 520px;
+            min-height: 540px;
         }
-
-            .card:hover {
-                border-color: #c9a96e;
-                transform: translateY(-10px);
-            }
-
-            .card.featured {
-                border-color: #c9a96e;
-                background: #222;
-            }
-
-        .price {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #c9a96e;
-            margin: 20px 0;
-        }
-
-        .tagline {
-            font-size: 1.1rem;
-            margin: 15px 0;
-            color: #ddd;
-        }
-
-        .card ul {
-            flex-grow: 1;
-            padding-left: 20px;
-            text-align: left;
-            margin: 20px 0;
-        }
-
-        .card .btn.small {
-            margin-top: 25px;
-            align-self: center;
-        }
+        .card:hover {border-color:#c9a96e;transform:translateY(-10px);}
+        .card.featured {border-color:#c9a96e;background:#222;}
+        .price {font-size:3rem;font-weight:bold;color:#c9a96e;margin:20px 0;}
+        .tagline {font-size:1.1rem;margin:15px 0;color:#ddd;}
+        .card ul {flex-grow:1;padding-left:20px;text-align:left;margin:20px 0;}
+        .btn {padding:14px 28px;background:#c9a96e;color:black;font-weight:bold;border-radius:50px;text-decoration:none;margin-top:auto;align-self:center;transition:.3s;}
+        .btn:hover {background:white;transform:scale(1.05);}
+        .budget-card {background:linear-gradient(135deg,#222,#111);border:3px solid #c9a96e;}
+        .budget-card h3 {font-size:2.2rem;margin-bottom:20px;}
+        .budget-card p {font-size:1.25rem;line-height:1.8;color:#eee;margin:20px 0;flex-grow:1;}
+        @media(max-width:860px){.price-cards{grid-template-columns:1fr;}}
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">MCNAIRFOTO</div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="pricing.html" class="active">Pricing</a></li>
-            <li><a href="showroom.html">Showroom</a></li>
-            <li><a href="booking.html">Book Now</a></li>
-        </ul>
-    </nav>
 
-    <section class="pricing-section">
-        <h1>Pricing Packages</h1>
-        <div class="price-cards">
+<nav class="navbar">
+    <div class="logo">MCNAIRFOTO</div>
+    <div class="menu-toggle" id="mobile-menu">Menu</div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="pricing.html" class="active">Pricing</a></li>
+        <li><a href="showroom.html">Showroom</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+    </ul>
+</nav>
 
-            <!-- Event Day Rate -->
-            <div class="card">
-                <h3>Event Day Rate</h3>
-                <div class="price">$500</div>
-                <p class="tagline">We’ll be there from sunrise to the last dance</p>
-                <ul>
-                    <li>Unlimited coverage (6-8 hours)</li>
-                    <li>Every laugh, tear, and toast captured</li>
-                    <li>All high-resolution edited images</li>
-                    <li>Travel included within 50 miles</li>
-                </ul>
-                <a href="booking.html" class="btn small">Secure My Date</a>
-            </div>
+<section class="pricing-section">
+    <h1>Pricing Packages</h1>
+    <div class="price-cards">
 
-            <!-- 1 Hour Magic Hour -->
-            <div class="card">
-                <h3>1 Hour Magic Hour</h3>
-                <div class="price">$150</div>
-                <p class="tagline">Golden-hour portraits that feel like movie stills</p>
-                <ul>
-                    <li>60 minutes of pure connection</li>
-                    <li>30+ hand-edited, breathtaking images</li>
-                    <li>Perfect for couples, families, or just you</li>
-                    <li>Online gallery + full printing rights</li>
-                    <li>Location of your choice</li>
-                </ul>
-                <a href="booking.html" class="btn small">Book This Session</a>
-            </div>
-
-            <!-- 30 Min Studio Glow-Up -->
-            <div class="card">
-                <h3>30 Min Studio Glow-Up</h3>
-                <div class="price">$225</div>
-                <p class="tagline">Headshots & branding that stop the scroll</p>
-                <ul>
-                    <li>15 magazine-quality retouched images</li>
-                    <li>Professional studio lighting & backdrops</li>
-                    <li>Look confident, polished, and unforgettable</li>
-                    <li>Same-week delivery available</li>
-                    <li>Perfect for LinkedIn, actors, models, entrepreneurs</li>
-                </ul>
-                <a href="mailto:mcnairfoto@gmail.com" class="btn small">Email for Availability</a>
-            </div>
-
-            <!-- Forever Photo Package -->
-            <div class="card featured">
-                <h3>Forever Photo Package</h3>
-                <div class="price">$1,200</div>
-                <p class="tagline">Your entire wedding day, told beautifully</p>
-                <ul>
-                    <li>8 hours of seamless coverage</li>
-                    <li>Second photographer included</li>
-                    <li>400+ fully edited, emotional images</li>
-                    <li>Complimentary engagement session</li>
-                    <li>Custom USB + luxury print box</li>
-                    <li>Tears, laughter, and every stolen kiss</li>
-                </ul>
-                <a href="booking.html" class="btn small">Reserve My Wedding</a>
-            </div>
-
-            <!-- Photo + Cinematic Film -->
-            <div class="card featured">
-                <h3>Photo + Cinematic Film</h3>
-                <div class="price">$2,400</div>
-                <p class="tagline">Relive your day in photos AND a tear-jerking film</p>
-                <ul>
-                    <li>Everything in the Photo package</li>
-                    <li>Stunning 4K cinematic highlight film (5–7 min)</li>
-                    <li>Full ceremony + speeches filmed</li>
-                    <li>Drone aerial shots (weather permitting)</li>
-                    <li>Second shooter</li>
-                    <li>You’ll watch it on repeat for years</li>
-                </ul>
-                <a href="booking.html" class="btn small">Yes — I Want This!</a>
-            </div>
-
-            <!-- What's Your Budget? -->
-            <div class="card budget-card">
-                <h3>What’s Your Budget?</h3>
-                <p>Custom packages starting at $800<br>Tell me what you need – I’ll make it work.</p>
-                <a href="mailto:mcnairfoto@gmail.com" class="btn">Email Me</a>
-            </div>
-
+        <!-- Event Day Rate -->
+        <div class="card">
+            <h3>Event Day Rate</h3>
+            <div class="price">$500</div>
+            <p class="tagline">We’ll be there from sunrise to the last dance</p>
+            <ul>
+                <li>Unlimited coverage (6–8 hours)</li>
+                <li>Every laugh, tear, and toast captured</li>
+                <li>All high-resolution edited images</li>
+                <li>Travel included within 50 miles</li>
+            </ul>
+            <a href="booking.html" class="btn">Secure My Date</a>
         </div>
-    </section>
 
-    <footer class="footer">
-        <div class="container">
-            <h3>Get in Touch</h3>
-            <form action="https://formspree.io/f/xnnwjojg" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="_replyto" placeholder="Your Email" required>
-                <input type="text" name="phone" placeholder="Phone (optional)">
-                <textarea name="message" placeholder="Tell me about your big day…" rows="5" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
-            </form>
-            <p>© 2025 MCNAIRFOTO • All rights reserved</p>
+        <!-- What’s Your Budget? (right under Event Day Rate) -->
+        <div class="card budget-card">
+            <h3>What’s Your Budget?</h3>
+            <p>Custom packages starting at $800<br>Tell me what you need – I’ll make it work.</p>
+            <a href="mailto:mcnairfoto@gmail.com" class="btn">Email Me</a>
         </div>
-    </footer>
 
-    <script>
-    document.getElementById('mobile-menu').onclick = () => 
-      document.getElementById('nav-links').classList.toggle('active');
-    </script>
+        <!-- 1 Hour Magic Hour -->
+        <div class="card">
+            <h3>1 Hour Magic Hour</h3>
+            <div class="price">$150</div>
+            <p class="tagline">Golden-hour portraits that feel like movie stills</p>
+            <ul>
+                <li>60 minutes of pure connection</li>
+                <li>30+ hand-edited, breathtaking images</li>
+                <li>Perfect for couples, families, or just you</li>
+                <li>Online gallery + full printing rights</li>
+                <li>Location of your choice</li>
+            </ul>
+            <a href="booking.html" class="btn">Book This Session</a>
+        </div>
+
+        <!-- 30 Min Studio Glow-Up -->
+        <div class="card">
+            <h3>30 Min Studio Glow-Up</h3>
+            <div class="price">$225</div>
+            <p class="tagline">Headshots & branding that stop the scroll</p>
+            <ul>
+                <li>15 magazine-quality retouched images</li>
+                <li>Professional studio lighting & backdrops</li>
+                <li>Look confident, polished, and unforgettable</li>
+                <li>Same-week delivery available</li>
+                <li>Perfect for LinkedIn, actors, models, entrepreneurs</li>
+            </ul>
+            <a href="mailto:mcnairfoto@gmail.com" class="btn">Email for Availability</a>
+        </div>
+
+        <!-- Forever Photo Package -->
+        <div class="card featured">
+            <h3>Forever Photo Package</h3>
+            <div class="price">$1,200</div>
+            <p class="tagline">Your entire wedding day, told beautifully</p>
+            <ul>
+                <li>8 hours of seamless coverage</li>
+                <li>Second photographer included</li>
+                <li>400+ fully edited, emotional images</li>
+                <li>Complimentary engagement session</li>
+                <li>Custom USB + luxury print box</li>
+                <li>Tears, laughter, and every stolen kiss</li>
+            </ul>
+            <a href="booking.html" class="btn">Reserve My Wedding</a>
+        </div>
+
+        <!-- Photo + Cinematic Film -->
+        <div class="card featured">
+            <h3>Photo + Cinematic Film</h3>
+            <div class="price">$2,400</div>
+            <p class="tagline">Relive your day in photos AND a tear-jerking film</p>
+            <ul>
+                <li>Everything in the Photo package</li>
+                <li>Stunning 4K cinematic highlight film (5–10 min)</li>
+                <li>Full ceremony + speeches filmed</li>
+                <li>Drone aerial shots (weather permitting)</li>
+                <li>You’ll watch it on repeat for years</li>
+            </ul>
+            <a href="booking.html" class="btn">Yes — I Want This!</a>
+        </div>
+
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <h3>Get in Touch</h3>
+        <form action="https://formspree.io/f/xnnwjojg" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="_replyto" placeholder="Your Email" required>
+            <input type="text" name="phone" placeholder="Phone (optional)">
+            <textarea name="message" placeholder="Tell me about your big day…" rows="5" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+        <p>© 2025 MCNAIRFOTO • All rights reserved</p>
+    </div>
+</footer>
+
+<script>
+document.getElementById('mobile-menu').onclick = () => 
+    document.getElementById('nav-links').classList.toggle('active');
+</script>
 </body>
 </html>

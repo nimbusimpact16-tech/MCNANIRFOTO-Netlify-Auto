@@ -8,21 +8,34 @@
 <style>
 .pricing-section{padding:140px 20px 100px;text-align:center;background:#000}
 .pricing-section h1{font-family:"Playfair Display",serif;font-size:4.5rem;color:#c9a96e;margin-bottom:60px}
-.price-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:50px}
-.card{background:#1a1a1a;padding:35px;border-radius:15px;border:2px solid transparent;transition:.4s;position:relative}
-.card:hover{border-color:#c9a96e;transform:translateY(-10px)}
+.price-cards{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;max-width:1400px;margin:0 auto;
+}
+.card{
+  background:#1a1a1a;padding:40px 30px;border-radius:15px;border:2px solid transparent;
+  transition:.4s;display:flex;flex-direction:column;justify-content:space-between;height:100%;
+  min-height:580px;position:relative;
+}
+.card:hover{border-color:#c9a96e;transform:translateY(-12px)}
 .card.featured{border-color:#c9a96e;background:#222}
-.price{font-size:3rem;font-weight:bold;color:#c9a96e;margin:20px 0}
-.tagline{font-size:1.1rem;color:#ddd;margin:15px 0}
-.card ul{list-style:none;padding:0;text-align:left;margin:25px 0}
-.card ul li{padding:8px 0;color:#eee}
-.btn{padding:15px 30px;background:#c9a96e;color:black;font-weight:bold;border-radius:50px;text-decoration:none;display:inline-block;margin-top:auto;transition:.3s}
-.btn:hover{background:white;transform:scale(1.05)}
-.budget-card{background:linear-gradient(135deg,#222,#111);border:3px solid #c9a96e}
-.budget-card h3{font-size:2.2rem;margin-bottom:20px}
+.price{font-size:3.2rem;font-weight:bold;color:#c9a96e;margin:20px 0}
+.tagline{font-size:1.15rem;color:#ddd;margin:15px 0;line-height:1.6}
+.card ul{list-style:none;padding:0;margin:30px 0;flex-grow:1}
+.card ul li{padding:10px 0;color:#eee;font-size:1.05rem}
+.btn{
+  padding:16px 32px;background:#c9a96e;color:black;font-weight:bold;border-radius:50px;
+  text-decoration:none;display:inline-block;margin-top:auto;transition:.3s;align-self:center;
+}
+.btn:hover{background:white;transform:scale(1.07)}
+.budget-card{
+  background:linear-gradient(135deg,#222,#111);border:3px solid #c9a96e;display:flex;flex-direction:column;
+}
+.budget-card h3{font-size:2.4rem;margin-bottom:20px}
+.budget-card p{font-size:1.25rem;line-height:1.8;color:#eee;margin:20px 0;flex-grow:1}
 @media(max-width:860px){
-  .price-cards{grid-template-columns:1fr}
+  .price-cards{grid-template-columns:1fr;gap:40px}
   .pricing-section h1{font-size:3.5rem}
+  .card{min-height:auto;padding:35px 25px}
 }
 </style>
 </head>
@@ -42,43 +55,46 @@
 
 <section class="pricing-section">
   <h1>Pricing Packages</h1>
-  <div class="price-cards container">
+  <div class="price-cards">
 
     <!-- Photo Only -->
     <div class="card">
-      <h3>Photo Only</h3>
-      <div class="price">$1,800</div>
-      <p class="tagline">Perfect for intimate weddings & portraits</p>
-      <ul>
-        <li>8 hours coverage</li>
-        <li>400+ edited high-res photos</li>
-        <li>Online gallery + USB</li>
-        <li>Second shooter available</li>
-      </ul>
+      <div>
+        <h3>Photo Only</h3>
+        <div class="price">$1,800</div>
+        <p class="tagline">Perfect for intimate weddings & portraits</p>
+        <ul>
+          <li>8 hours coverage</li>
+          <li>400+ edited high-res photos</li>
+          <li>Online gallery + USB</li>
+          <li>Second shooter available</li>
+        </ul>
+      </div>
       <a href="booking.html" class="btn">Book This Package</a>
     </div>
 
     <!-- Photo + Video -->
     <div class="card featured">
-      <h3>Photo + Cinematic Film</h3>
-      <div class="price">$2,400</div>
-      <p class="tagline">The full experience – photos + a tear-jerker film</p>
-      <ul>
-        <li>Everything in Photo package</li>
-        <li>5–10 minute 4K highlight film</li>
-        <li>Full ceremony + speeches filmed</li>
-        <li>Drone shots (weather permitting)</li>
-      </ul>
+      <div>
+        <h3>Photo + Cinematic Film</h3>
+        <div class="price">$2,400</div>
+        <p class="tagline">The full experience – photos + a tear-jerker film</p>
+        <ul>
+          <li>Everything in Photo package</li>
+          <li>5–10 minute 4K highlight film</li>
+          <li>Full ceremony + speeches filmed</li>
+          <li>Drone shots (weather permitting)</li>
+        </ul>
+      </div>
       <a href="booking.html" class="btn">Yes – I Want This!</a>
     </div>
 
-    <!-- Budget Column -->
+    <!-- Budget Card -->
     <div class="card budget-card">
-      <h3>What’s Your Budget?</h3>
-      <p style="font-size:1.3rem;color:#eee;margin:20px 0;line-height:1.8;">
-        Custom packages starting at $800<br>
-        Tell me what you need – I’ll make it work.
-      </p>
+      <div>
+        <h3>What’s Your Budget?</h3>
+        <p>Custom packages starting at $800<br>Tell me what you need – I’ll make it work.</p>
+      </div>
       <a href="mailto:mcnairfoto@gmail.com" class="btn">Email Me</a>
     </div>
 

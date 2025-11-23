@@ -30,11 +30,19 @@
       object-fit: cover;
       border-radius: 15px;
       cursor: pointer;
-      transition: 0.4s;
       box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+
+      /* fade-in animation base */
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .gallery-grid img.loaded {
+      opacity: 1;
+      transform: translateY(0);
     }
     .gallery-grid img:hover {
-      transform: scale(1.03);
+      transform: translateY(-3px);
       box-shadow: 0 20px 40px rgba(201,169,110,0.4);
     }
 
@@ -111,48 +119,47 @@
 
     <div class="gallery-grid">
 
-      <!-- REAL EXACT FILENAMES -->
-      <img src="/photos/2.jpg" onclick="openLightbox(this)">
-      <img src="/photos/3.jpg" onclick="openLightbox(this)">
-      <img src="/photos/4.jpg" onclick="openLightbox(this)">
-      <img src="/photos/5.jpg" onclick="openLightbox(this)">
-      <img src="/photos/6.jpg" onclick="openLightbox(this)">
-      <img src="/photos/7.jpg" onclick="openLightbox(this)">
-      <img src="/photos/8.jpg" onclick="openLightbox(this)">
-      <img src="/photos/9.jpg" onclick="openLightbox(this)">
+      <!-- REAL EXACT FILENAMES (root-absolute paths for Vercel) -->
+      <img src="/photos/2.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/3.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/4.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/5.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/6.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/7.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/8.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/9.jpg" loading="lazy" onclick="openLightbox(this)">
 
-      <img src="/photos/a.jpeg" onclick="openLightbox(this)">
-      <img src="/photos/bvvhhjd.jpg" onclick="openLightbox(this)">
-      <img src="/photos/dfrgsters.jpg" onclick="openLightbox(this)">
-      <img src="/photos/drtrtsr.jpg" onclick="openLightbox(this)">
-      <img src="/photos/fgsdtrfj.jpg" onclick="openLightbox(this)">
-      <img src="/photos/fgsrtstr.JPG" onclick="openLightbox(this)">
-      <img src="/photos/fgxdftt.jpg" onclick="openLightbox(this)">
-      <img src="/photos/fhfydt.JPG" onclick="openLightbox(this)">
-      <img src="/photos/gtydydu.JPG" onclick="openLightbox(this)">
-      <img src="/photos/hgfcv.jpg" onclick="openLightbox(this)">
-      <img src="/photos/ioiuo8.jpg" onclick="openLightbox(this)">
+      <img src="/photos/a.jpeg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/bvvhhjd.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/dfrgsters.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/drtrtsr.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/fgsdtrfj.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/fgsrtstr.JPG" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/fgxdftt.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/fhfydt.JPG" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/gtydydu.JPG" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/hgfcv.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/ioiuo8.jpg" loading="lazy" onclick="openLightbox(this)">
 
-      <img src="/photos/jkhgj.jpg" onclick="openLightbox(this)">
-      <img src="/photos/jkhkj.jpg" onclick="openLightbox(this)">
-      <img src="/photos/nbg.jpg" onclick="openLightbox(this)">
-      <img src="/photos/rstetfg.JPG" onclick="openLightbox(this)">
-      <img src="/photos/rstsrtrjg.jpg" onclick="openLightbox(this)">
-      <img src="/photos/rstretsr.JPG" onclick="openLightbox(this)">
-      <img src="/photos/rsttrt.JPG" onclick="openLightbox(this)">
-      <img src="/photos/sdfgtrser.jpg" onclick="openLightbox(this)">
-      <img src="/photos/srtsrtrs.jpg" onclick="openLightbox(this)">
-      <img src="/photos/tdydyt.jpg" onclick="openLightbox(this)">
-      <img src="/photos/tydtry.jpg" onclick="openLightbox(this)">
-      <img src="/photos/tydtrydrt.jpg" onclick="openLightbox(this)">
-      <img src="/photos/tydtrydt.jpg" onclick="openLightbox(this)">
-      <img src="/photos/tydty.jpg" onclick="openLightbox(this)">
+      <img src="/photos/jkhgj.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/jkhkj.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/nbg.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/rstetfg.JPG" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/rstsrtrjg.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/rstretsr.JPG" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/rsttrt.JPG" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/sdfgtrser.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/srtsrtrs.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/tdydyt.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/tydtry.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/tydtrydrt.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/tydtrydt.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/tydty.jpg" loading="lazy" onclick="openLightbox(this)">
 
-      <!-- CONFIRMED FILENAME -->
-      <img src="/photos/tydtyt555.jpg" onclick="openLightbox(this)">
+      <img src="/photos/tydtyt555.jpg" loading="lazy" onclick="openLightbox(this)">
 
-      <img src="/photos/vbvcbfg.jpg" onclick="openLightbox(this)">
-      <img src="/photos/vcvb.jpg" onclick="openLightbox(this)">
+      <img src="/photos/vbvcbfg.jpg" loading="lazy" onclick="openLightbox(this)">
+      <img src="/photos/vcvb.jpg" loading="lazy" onclick="openLightbox(this)">
 
     </div>
   </section>
@@ -188,6 +195,18 @@
     }
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Add 'loaded' class when images finish loading (for fade-in)
+    document.addEventListener('DOMContentLoaded', () => {
+      const imgs = document.querySelectorAll('.gallery-grid img');
+      imgs.forEach(img => {
+        if (img.complete) {
+          img.classList.add('loaded');
+        } else {
+          img.addEventListener('load', () => img.classList.add('loaded'));
+        }
+      });
     });
   </script>
 

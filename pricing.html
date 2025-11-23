@@ -9,17 +9,16 @@
 .pricing-section{padding:140px 20px 100px;text-align:center;background:#000}
 .pricing-section h1{font-family:"Playfair Display",serif;font-size:4.5rem;color:#c9a96e;margin-bottom:60px}
 .price-cards{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;max-width:1400px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:35px;max-width:1600px;margin:0 auto;
 }
 .card{
   background:#1a1a1a;padding:40px 30px;border-radius:15px;border:2px solid transparent;
-  transition:.4s;display:flex;flex-direction:column;justify-content:space-between;height:100%;
-  min-height:580px;position:relative;
+  transition:.4s;display:flex;flex-direction:column;height:100%;min-height:620px;position:relative;
 }
 .card:hover{border-color:#c9a96e;transform:translateY(-12px)}
 .card.featured{border-color:#c9a96e;background:#222}
-.price{font-size:3.2rem;font-weight:bold;color:#c9a96e;margin:20px 0}
-.tagline{font-size:1.15rem;color:#ddd;margin:15px 0;line-height:1.6}
+.price{font-size:3.4rem;font-weight:bold;color:#c9a96e;margin:20px 0}
+.tagline{font-size:1.2rem;color:#ddd;margin:15px 0;line-height:1.6}
 .card ul{list-style:none;padding:0;margin:30px 0;flex-grow:1}
 .card ul li{padding:10px 0;color:#eee;font-size:1.05rem}
 .btn{
@@ -27,11 +26,9 @@
   text-decoration:none;display:inline-block;margin-top:auto;transition:.3s;align-self:center;
 }
 .btn:hover{background:white;transform:scale(1.07)}
-.budget-card{
-  background:linear-gradient(135deg,#222,#111);border:3px solid #c9a96e;display:flex;flex-direction:column;
-}
-.budget-card h3{font-size:2.4rem;margin-bottom:20px}
-.budget-card p{font-size:1.25rem;line-height:1.8;color:#eee;margin:20px 0;flex-grow:1}
+.budget-card{background:linear-gradient(135deg,#222,#111);border:3px solid #c9a96e}
+.budget-card h3{font-size:2.5rem;margin-bottom:20px}
+.budget-card p{font-size:1.3rem;line-height:1.8;color:#eee;margin:20px 0;flex-grow:1}
 @media(max-width:860px){
   .price-cards{grid-template-columns:1fr;gap:40px}
   .pricing-section h1{font-size:3.5rem}
@@ -57,39 +54,71 @@
   <h1>Pricing Packages</h1>
   <div class="price-cards">
 
-    <!-- Photo Only -->
+    <!-- 1. Portrait Session -->
     <div class="card">
       <div>
-        <h3>Photo Only</h3>
+        <h3>Portrait Session</h3>
+        <div class="price">$350</div>
+        <p class="tagline">Family, maternity, headshots, couples</p>
+        <ul>
+          <li>90-minute session</li>
+          <li>50+ edited photos</li>
+          <li>Online gallery</li>
+          <li>Print release</li>
+        </ul>
+      </div>
+      <a href="booking.html" class="btn">Book Portrait</a>
+    </div>
+
+    <!-- 2. Engagement Session -->
+    <div class="card">
+      <div>
+        <h3>Engagement Session</h3>
+        <div class="price">$450</div>
+        <p class="tagline">Save-the-date perfection</p>
+        <ul>
+          <li>2-hour session</li>
+          <li>Two outfit changes</li>
+          <li>75+ edited photos</li>
+          <li>Complimentary 8x10 print</li>
+        </ul>
+      </div>
+      <a href="booking.html" class="btn">Book Engagement</a>
+    </div>
+
+    <!-- 3. Wedding Photo Only -->
+    <div class="card">
+      <div>
+        <h3>Wedding Photo Only</h3>
         <div class="price">$1,800</div>
-        <p class="tagline">Perfect for intimate weddings & portraits</p>
+        <p class="tagline">Full-day photography coverage</p>
         <ul>
           <li>8 hours coverage</li>
           <li>400+ edited high-res photos</li>
           <li>Online gallery + USB</li>
-          <li>Second shooter available</li>
+          <li>Second shooter available (+$400)</li>
         </ul>
       </div>
       <a href="booking.html" class="btn">Book This Package</a>
     </div>
 
-    <!-- Photo + Video -->
+    <!-- 4. Wedding Photo + Video (Featured) -->
     <div class="card featured">
       <div>
         <h3>Photo + Cinematic Film</h3>
         <div class="price">$2,400</div>
-        <p class="tagline">The full experience – photos + a tear-jerker film</p>
+        <p class="tagline">The complete wedding experience</p>
         <ul>
           <li>Everything in Photo package</li>
-          <li>5–10 minute 4K highlight film</li>
+          <li>5–10 min 4K highlight film</li>
           <li>Full ceremony + speeches filmed</li>
-          <li>Drone shots (weather permitting)</li>
+          <li>Drone aerials (weather permitting)</li>
         </ul>
       </div>
       <a href="booking.html" class="btn">Yes – I Want This!</a>
     </div>
 
-    <!-- Budget Card -->
+    <!-- 5. What’s Your Budget? -->
     <div class="card budget-card">
       <div>
         <h3>What’s Your Budget?</h3>

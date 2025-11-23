@@ -58,7 +58,65 @@
     </style>
 </head>
 <body>
+<body>
 
+<!-- ←←←←←←←←←← PASTE THE WHOLE BLOCK RIGHT HERE ↓↓↓↓↓↓↓↓↓↓ -->
+<!-- ==================== FLOATING LEFT HAMBURGER MENU (MOBILE ONLY) ==================== -->
+<div class="mobile-floating-menu" id="floating-menu">
+  <svg viewBox="0 0 100 80" width="30" height="30" fill="#ffffff">
+    <rect width="100" height="12" rx="6"></rect>
+    <rect y="30" width="100" height="12" rx="6"></rect>
+    <rect y="60" width="100" height="12" rx="6"></rect>
+  </svg>
+</div>
+
+<style>
+.mobile-floating-menu {
+  position: fixed;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+  width: 58px;
+  height: 58px;
+  background: rgba(45,45,45,0.92);
+  backdrop-filter: blur(12px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9998;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: all 0.35s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+@media (max-width: 860px) {
+  .mobile-floating-menu {opacity:1;pointer-events:auto;}
+}
+.mobile-floating-menu:hover {
+  background:#c9a96e;
+  transform:translateY(-50%) scale(1.12);
+  box-shadow:0 15px 40px rgba(201,169,110,0.4);
+}
+.nav-links.active ~ .mobile-floating-menu,
+.mobile-floating-menu.active {background:#c9a96e;}
+</style>
+
+<script>
+document.getElementById('floating-menu')?.addEventListener('click', function() {
+  const nav = document.getElementById('nav-links');
+  const toggle = document.querySelector('.menu-toggle');
+  nav.classList.toggle('active');
+  toggle?.classList.toggle('active');
+  this.classList.toggle('active');
+});
+</script>
+<!-- ==================== END FLOATING MENU ==================== -->
+
+  <!-- the rest of your page continues here… -->
+  <nav class="navbar">
+    …
     <nav class="navbar"><div class="logo">MCNAIRFOTO</div><div class="menu-toggle" id="mobile-menu">☰</div><ul class="nav-links" id="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="showroom.html">Showroom</a></li><li><a href="booking.html">Book Now</a></li></ul>
     </nav>
 

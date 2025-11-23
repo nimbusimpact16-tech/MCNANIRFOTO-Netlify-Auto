@@ -9,11 +9,22 @@
 .pricing-section{padding:140px 20px 100px;text-align:center;background:#000}
 .pricing-section h1{font-family:"Playfair Display",serif;font-size:4.5rem;color:#c9a96e;margin-bottom:60px}
 .price-cards{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:35px;max-width:1600px;margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:35px;
+  max-width:1600px;
+  margin:0 auto;
 }
 .card{
-  background:#1a1a1a;padding:40px 30px;border-radius:15px;border:2px solid transparent;
-  transition:.4s;display:flex;flex-direction:column;height:100%;min-height:620px;position:relative;
+  background:#1a1a1a;
+  padding:40px 30px;
+  border-radius:15px;
+  border:2px solid transparent;
+  transition:.4s;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height:640px;
 }
 .card:hover{border-color:#c9a96e;transform:translateY(-12px)}
 .card.featured{border-color:#c9a96e;background:#222}
@@ -22,15 +33,26 @@
 .card ul{list-style:none;padding:0;margin:30px 0;flex-grow:1}
 .card ul li{padding:10px 0;color:#eee;font-size:1.05rem}
 .btn{
-  padding:16px 32px;background:#c9a96e;color:black;font-weight:bold;border-radius:50px;
-  text-decoration:none;display:inline-block;margin-top:auto;transition:.3s;align-self:center;
+  padding:16px 32px;
+  background:#c9a96e;
+  color:black;
+  font-weight:bold;
+  border-radius:50px;
+  text-decoration:none;
+  display:inline-block;
+  margin-top:auto;
+  transition:.3s;
+  align-self:center;
 }
 .btn:hover{background:white;transform:scale(1.07)}
-.budget-card{background:linear-gradient(135deg,#222,#111);border:3px solid #c9a96e}
+.budget-card{
+  background:linear-gradient(135deg,#222,#111);
+  border:3px solid #c9a96e;
+}
 .budget-card h3{font-size:2.5rem;margin-bottom:20px}
 .budget-card p{font-size:1.3rem;line-height:1.8;color:#eee;margin:20px 0;flex-grow:1}
 @media(max-width:860px){
-  .price-cards{grid-template-columns:1fr;gap:40px}
+  .price-cards{grid-template-columns:1fr}
   .pricing-section h1{font-size:3.5rem}
   .card{min-height:auto;padding:35px 25px}
 }
@@ -54,15 +76,15 @@
   <h1>Pricing Packages</h1>
   <div class="price-cards">
 
-    <!-- 1. Portrait Session -->
+    <!-- Portrait Session -->
     <div class="card">
       <div>
         <h3>Portrait Session</h3>
         <div class="price">$350</div>
-        <p class="tagline">Family, maternity, headshots, couples</p>
+        <p class="tagline">Family • Maternity • Headshots • Couples</p>
         <ul>
           <li>90-minute session</li>
-          <li>50+ edited photos</li>
+          <li>50+ edited high-res photos</li>
           <li>Online gallery</li>
           <li>Print release</li>
         </ul>
@@ -70,7 +92,7 @@
       <a href="booking.html" class="btn">Book Portrait</a>
     </div>
 
-    <!-- 2. Engagement Session -->
+    <!-- Engagement Session -->
     <div class="card">
       <div>
         <h3>Engagement Session</h3>
@@ -86,7 +108,7 @@
       <a href="booking.html" class="btn">Book Engagement</a>
     </div>
 
-    <!-- 3. Wedding Photo Only -->
+    <!-- Wedding Photo Only -->
     <div class="card">
       <div>
         <h3>Wedding Photo Only</h3>
@@ -102,7 +124,7 @@
       <a href="booking.html" class="btn">Book This Package</a>
     </div>
 
-    <!-- 4. Wedding Photo + Video (Featured) -->
+    <!-- Wedding Photo + Video (Featured) -->
     <div class="card featured">
       <div>
         <h3>Photo + Cinematic Film</h3>
@@ -118,7 +140,7 @@
       <a href="booking.html" class="btn">Yes – I Want This!</a>
     </div>
 
-    <!-- 5. What’s Your Budget? -->
+    <!-- What’s Your Budget? -->
     <div class="card budget-card">
       <div>
         <h3>What’s Your Budget?</h3>

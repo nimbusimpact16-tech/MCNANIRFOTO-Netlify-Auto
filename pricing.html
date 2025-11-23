@@ -6,49 +6,34 @@
 <title>Pricing | MCNAIRFOTO</title>
 <link rel="stylesheet" href="style.css">
 <style>
-.pricing-section{padding:140px 20px 100px;text-align:center;background:#000;color:#fff}
+.pricing-section{padding:140px 20px 100px;text-align:center;background:#000}
 .pricing-section h1{font-family:"Playfair Display",serif;font-size:4.5rem;color:#c9a96e;margin-bottom:60px}
 .price-cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:30px;
-  max-width:1600px;
+  grid-template-columns:repeat(auto-fit, minmax(320px, 1fr));   /* ← fixed this line */
+  gap:35px;
+  max-width:1800px;
   margin:0 auto;
+  justify-content:center;                               /* ← added this */
 }
 .card{
-  background:#1a1a1a;
-  padding:40px 30px;
-  border-radius:15px;
-  border:2px solid transparent;
-  transition:.4s;
-  display:flex;
-  flex-direction:column;
-  min-height:580px;
+  background:#1a1a1a;padding:40px 30px;border-radius:15px;
+  border:2px solid transparent;transition:.4s;display:flex;
+  flex-direction:column;min-height:580px;
 }
 .card:hover{border-color:#c9a96e;transform:translateY(-10px)}
 .card.featured{border-color:#c9a96e;background:#222}
 .price{font-size:3.4rem;font-weight:bold;color:#c9a96e;margin:20px 0}
 .tagline{font-size:1.2rem;color:#ddd;margin:15px 0}
-.card ul{list-style:none;padding:0 0 0 20px;text-align:left;margin:25px 0;flex-grow:1}
-.btn{
-  padding:16px 35px;
-  background:#c9a96e;
-  color:black;
-  font-weight:bold;
-  border-radius:50px;
-  text-decoration:none;
-  align-self:center;
-  transition:.3s;
-}
+.card ul{list-style:none;padding-left:20px;text-align:left;margin:25px 0;flex-grow:1}
+.btn{padding:16px 35px;background:#c9a96e;color:black;font-weight:bold;
+     border-radius:50px;text-decoration:none;align-self:center;transition:.3s}
 .btn:hover{background:white;transform:scale(1.05)}
-.budget-card{
-  background:linear-gradient(135deg,#222,#111);
-  border:4px solid #c9a96e !important;
-}
+.budget-card{background:linear-gradient(135deg,#222,#111);border:4px solid #c9a96e}
 .budget-card h3{font-size:2.5rem;margin-bottom:25px;color:#c9a96e}
-.budget-card p{font-size:1.35rem;line-height:1.8;color:#eee;flex-grow:1}
+.budget-card p{font-size:1.35rem;line-height:1.8;color:#eee;flex-grow:1;text-align:center}
 @media(max-width:860px){
-  .price-cards{grid-template-columns:1fr}
+  .price-cards{grid-template-columns:1fr;gap:40px}
   .pricing-section h1{font-size:3.5rem}
   .card{min-height:auto}
 }
@@ -86,14 +71,14 @@
       <a href="booking.html" class="btn">Secure My Date</a>
     </div>
 
-    <!-- WHAT’S YOUR BUDGET? – THIS ONE IS GUARANTEED TO SHOW -->
+    <!-- WHAT’S YOUR BUDGET? – NOW 100% VISIBLE ON DESKTOP TOO -->
     <div class="card budget-card">
       <h3>What’s Your Budget?</h3>
       <p>Custom packages starting at $800<br><strong>Tell me what you need – I’ll make it work.</strong></p>
       <a href="mailto:mcnairfoto@gmail.com" class="btn">Email Me</a>
     </div>
 
-    <!-- 1 Hour Magic Hour -->
+    <!-- the rest of your packages -->
     <div class="card">
       <h3>1 Hour Magic Hour</h3>
       <div class="price">$150</div>
@@ -108,7 +93,6 @@
       <a href="booking.html" class="btn">Book This Session</a>
     </div>
 
-    <!-- 30 Min Studio Glow-Up -->
     <div class="card">
       <h3>30 Min Studio Glow-Up</h3>
       <div class="price">$225</div>
@@ -123,7 +107,6 @@
       <a href="mailto:mcnairfoto@gmail.com" class="btn">Email for Availability</a>
     </div>
 
-    <!-- Forever Photo Package -->
     <div class="card featured">
       <h3>Forever Photo Package</h3>
       <div class="price">$1,200</div>
@@ -139,7 +122,6 @@
       <a href="booking.html" class="btn">Reserve My Wedding</a>
     </div>
 
-    <!-- Photo + Cinematic Film -->
     <div class="card featured">
       <h3>Photo + Cinematic Film</h3>
       <div class="price">$2,400</div>

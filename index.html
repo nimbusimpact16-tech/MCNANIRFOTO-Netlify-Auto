@@ -1,141 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MCNAIRFOTO | Wedding & Portrait Photography</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  .hero {
-    height: 100vh;
-    min-height: 700px;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('photos/2.jpg') center/cover no-repeat fixed;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition: background-image 1.5s ease-in-out;
-  }
-  .hero-content h1 {font-family:'Playfair Display',serif;font-size:7rem;color:#c9a96e;margin-bottom:20px;}
-  .hero-content p {font-size:1.8rem;margin-bottom:50px;color:white;}
-  .btn {padding:20px 60px;background:#c9a96e;color:black;font-weight:bold;font-size:1.4rem;border-radius:50px;transition:.3s;}
-  .btn:hover {background:white;transform:scale(1.05);}
-  @media (max-width:860px) {.hero-content h1{font-size:4.5rem;}.hero-content p{font-size:1.4rem;}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCNANIR FOTO</title>
+  <link href="style.css" rel="stylesheet" />
+
+  <!-- Updated HERO Styles (Mobile + Center Fix) -->
+  <style>
+    .hero {
+      min-height: 100vh;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+        url("photos/2.jpg") center/cover no-repeat;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: background-image 1.5s ease-in-out;
+    }
+
+    .hero-content h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 7rem;
+      color: #c9a96e;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 1.8rem;
+      margin-bottom: 50px;
+      color: white;
+    }
+
+    .btn {
+      padding: 20px 60px;
+      background: #c9a96e;
+      color: black;
+      font-weight: bold;
+      font-size: 1.4rem;
+      border-radius: 50px;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: white;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        min-height: 85vh;
+      }
+
+      .hero-content h1 {
+        font-size: 4.5rem;
+      }
+
+      .hero-content p {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<body>
 
-<!-- ←←←←←←←←←← PASTE THE WHOLE BLOCK RIGHT HERE ↓↓↓↓↓↓↓↓↓↓ -->
-<!-- ==================== FLOATING LEFT HAMBURGER MENU (MOBILE ONLY) ==================== -->
-<div class="mobile-floating-menu" id="floating-menu">
-  <svg viewBox="0 0 100 80" width="30" height="30" fill="#ffffff">
-    <rect width="100" height="12" rx="6"></rect>
-    <rect y="30" width="100" height="12" rx="6"></rect>
-    <rect y="60" width="100" height="12" rx="6"></rect>
-  </svg>
-</div>
+  <!-- Floating Mobile Menu -->
+  <div class="floating-menu">
+    <button class="menu-toggle">☰</button>
+    <div class="menu-items">
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="showroom.html">Showroom</a>
+      <a href="about.html">About</a>
+      <a href="booking.html">Booking</a>
+    </div>
+  </div>
 
-<style>
-.mobile-floating-menu {
-  position: fixed;
-  top: 50%;
-  left: 16px;
-  transform: translateY(-50%);
-  width: 58px;
-  height: 58px;
-  background: rgba(45,45,45,0.92);
-  backdrop-filter: blur(12px);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 9998;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  transition: all 0.35s ease;
-  opacity: 0;
-  pointer-events: none;
-}
-@media (max-width: 860px) {
-  .mobile-floating-menu {opacity:1;pointer-events:auto;}
-}
-.mobile-floating-menu:hover {
-  background:#c9a96e;
-  transform:translateY(-50%) scale(1.12);
-  box-shadow:0 15px 40px rgba(201,169,110,0.4);
-}
-.nav-links.active ~ .mobile-floating-menu,
-.mobile-floating-menu.active {background:#c9a96e;}
-</style>
-
-<script>
-document.getElementById('floating-menu')?.addEventListener('click', function() {
-  const nav = document.getElementById('nav-links');
-  const toggle = document.querySelector('.menu-toggle');
-  nav.classList.toggle('active');
-  toggle?.classList.toggle('active');
-  this.classList.toggle('active');
-});
-</script>
-<!-- ==================== END FLOATING MENU ==================== -->
-
-  <!-- the rest of your page continues here… -->
+  <!-- Navbar -->
   <nav class="navbar">
-    …
-<nav class="navbar">
-  <div class="logo">MCNAIRFOTO</div>
-  <div class="menu-toggle" id="mobile-menu">Menu</div>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="pricing.html">Pricing</a></li>
-    <li><a href="showroom.html">Showroom</a></li>
-    <li><a href="booking.html">Book Now</a></li>
-  </ul>
-</nav>
+    <h2 class="logo">MCNANIR FOTO</h2>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="showroom.html">Showroom</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="booking.html">Booking</a></li>
+    </ul>
+  </nav>
 
-<header class="hero">
-  <div class="hero-content">
-    <h1>MCNAIRFOTO</h1>
-    <p>Capturing your story with passion and precision</p>
-    <a href="showroom.html" class="btn">View Gallery</a>
-  </div>
-</header>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>MCNANIR FOTO</h1>
+      <p>Capturing moments with style, passion, and vision.</p>
+      <a href="booking.html" class="btn">Book Now</a>
+    </div>
+  </section>
 
-<footer class="footer">
-  <div class="container">
-    <h3>Get in Touch</h3>
-    <form action="https://formspree.io/f/xnnwjojg" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="_replyto" placeholder="Your Email" required>
-      <input type="text" name="phone" placeholder="Phone (optional)">
-      <textarea name="message" placeholder="Tell me about your big day…" rows="5" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-    <p>© 2025 MCNAIRFOTO • All rights reserved</p>
-  </div>
-</footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 MCNANIR FOTO. All Rights Reserved.</p>
+  </footer>
 
-<script>
-// Auto-change hero background every 6 seconds
-const heroPhotos = [
-  "2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.jpg","8.jpg","a.jpeg"   // add or remove any photos here
-];
-let current = 0;
-setInterval(() => {
-  current = (current + 1) % heroPhotos.length;
-  document.querySelector('.hero').style.backgroundImage = 
-    `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('photos/${heroPhotos[current]}')`;
-}, 6000);
-
-// Mobile menu
-document.getElementById('mobile-menu').onclick = () => 
-  document.getElementById('nav-links').classList.toggle('active');
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
